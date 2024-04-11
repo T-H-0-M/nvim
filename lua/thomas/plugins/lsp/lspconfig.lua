@@ -160,6 +160,13 @@ return {
 					-- Additional settings can be specified here according to jdtls documentation
 				})
 			end,
+
+			["marksman"] = function()
+				lspconfig["marksman"].setup({
+					capabilities = capabilities,
+					filetypes = { "markdown" }, -- Ensure 'markdown' is listed as a filetype
+				})
+			end,
 		})
 	end,
 }
