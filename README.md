@@ -42,3 +42,57 @@ largely targeted towards web development, machine learning, and latex.
 - [vim-maximizer](https://github.com/szw/vim-maximizer)
 - [vimtex](https://github.com/lervag/vimtex)
 - [which-key](https://github.com/folke/which-key.nvim)
+
+## Setup
+
+### UNIX
+
+1. Ensure that a terminal compatible with nerd fonts is installed. I personally
+   use [iTerm2](https://iterm2.com/).
+   - Install using `homebrew` - `brew install --cask iterm2` (Mac).
+   - Install using `apt` - `sudo apt-get install iterm2` (Ubuntu).
+2. Ensure that a nerd font is installed. I personally use
+   [Meslo Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Meslo)
+   - Install using `homebrew` -
+     `brew tap homebrew/cask-fonts && brew install --cask font-meslo-nerd-font`
+     (Mac)
+   - Install using `apt` - `sudo apt-get install fonts-meslo` (Ubuntu)
+3. Ensure that [neovim](https://neovim.io/) is installed
+   - `brew install neovim`(Mac)
+   - `sudo apt-get install neovim`(Ubuntu)
+4. Naviagate to your `.config` directory
+   - `cd ~/.config/`
+5. Clone the git repository
+   - `git clone https://github.com/T-H-0-M/nvim.git`
+6. Open neovim
+   - `nvim`
+
+All packages should automatically install.
+
+### Windows
+
+1. Ensure that a terminal compatible with nerd fonts is installed. A popular one
+   is [Windows Terminal](https://github.com/microsoft/terminal/).
+2. Ensure that a nerd font is installed. I personally use
+   [Meslo Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Meslo)
+   - `choco install nerd-fonts-meslo`(using
+     [chocolatey](https://chocolatey.org/)).
+3. Ensure that neovim is installed - `choco install neovim`
+4. Ensure that Neovim is in your PATH - restart your terminal and run `nvim`.
+   - If Neovim is not in your path, you can add it by going to your environment
+     variables and add a new item to your `path` variable under
+     `User variables`.
+   - The path should be to the `bin` directory of your neovim installation (it
+     should look something like `C:\Program Files\neovim\nvim-win64\bin`).
+   - Restart your terminal and run `nvim`.
+5. Navigate to your `AppData\Roaming\Local` directory -
+   `cd $env:APPDATA\Roaming\Local`
+   - This is where nvim will look for your nvim configuration files.
+6. Clone the git repository
+   - `git clone https://github.com/T-H-0-M/nvim.git`
+   - This will create a new directory called `nvim` in your `Local` directory.
+     It will contain all of the configuration files for nvim.
+7. Open neovim
+   - `nvim`
+
+All packages should automatically install.
