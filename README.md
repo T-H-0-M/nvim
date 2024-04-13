@@ -39,6 +39,7 @@ largely targeted towards web development, machine learning, and latex.
 - [todo-comments](https://github.com/folke/todo-comments.nvim)
 - [treesitter](https://github.com/tree-sitter/tree-sitter)
 - [trouble](https://github.com/folke/trouble.nvim)
+- [undotree](https://github.com/mbbill/undotree)
 - [vim-maximizer](https://github.com/szw/vim-maximizer)
 - [vimtex](https://github.com/lervag/vimtex)
 - [which-key](https://github.com/folke/which-key.nvim)
