@@ -7,6 +7,18 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		vim.diagnostic.config({
+			virtual_text = {},
+			float = {
+				border = "rounded", -- Rounded borders for the floating windows (aesthetic)
+				source = "always", -- Include the source of diagnostics in the display
+				wrap = true, -- Crucial: enable text wrapping within floating windows
+				max_width = 80, -- Set a max width to prevent messages from running off the screen
+			},
+			severity_sort = true, -- Sort messages by severity for better visibility
+			underline = true, -- Continue to underline errors
+			update_in_insert = false, -- Avoid updating diagnostics while typing
+		})
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
