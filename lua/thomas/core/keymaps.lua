@@ -20,6 +20,11 @@ keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- incremen
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
+
+keymap.set("n", "<leader>n1", "<cmd>1wincmd w<CR>", { desc = "Jump to the 1st window" })
+keymap.set("n", "<leader>n2", "<cmd>2wincmd w<CR>", { desc = "Jump to the 2nd window" })
+keymap.set("n", "<leader>n3", "<cmd>3wincmd w<CR>", { desc = "Jump to the 3rd window" })
+
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" }) -- make split windows equal width & height
