@@ -40,5 +40,11 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<Leader>nw", "<C-w>w", { noremap = true, silent = true }) -- switch to next window
 keymap.set("n", "<Leader>pw", "<C-w>W", { noremap = true, silent = true }) -- switch to previous window
 
+keymap.set("n", "<leader>tl", "<cmd>terminal<CR>", { desc = "Open terminal" }) -- open terminal
+
 -- VimTex
 keymap.set("n", "<leader>tc", ":VimtexCompile<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>tv", ":VimtexView<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>tw", ":VimtexCountWords<CR>", { noremap = true, silent = true })
+
+-- NeoTest
