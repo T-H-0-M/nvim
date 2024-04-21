@@ -173,11 +173,60 @@ return {
 				})
 			end,
 
+			-- Configuration for Markdown (marksman)
 			["marksman"] = function()
 				lspconfig["marksman"].setup({
 					capabilities = capabilities,
 					filetypes = { "markdown" }, -- Ensure 'markdown' is listed as a filetype
 				})
+			end,
+
+			["pyright"] = function()
+				local homebrew_python = "/opt/homebrew/bin/python3"
+				local venv_path = vim.fn.getenv("VIRTUAL_ENV")
+
+				if venv_path and type(venv_path) == "string" and venv_path ~= "" then
+					-- Using virtual environment paths
+					local site_packages_path = venv_path .. "/lib/python3.11/site-packages" -- specifically using Python 3.11
+					lspconfig["pyright"].setup({
+						capabilities = capabilities,
+						settings = {
+							python = {
+								analysis = {
+									autoSearchPaths = true,
+									useLibraryCodeForTypes = true,
+									extraPaths = { site_packages_path },
+									typeCheckingMode = "basic",
+								},
+								pythonPath = venv_path .. "/bin/python", -- Using the virtual environment Python
+							},
+						},
+						on_attach = function(client, bufnr)
+							vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+							client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+						end,
+					})
+				else
+					-- Using Homebrew Python as default if no VENV is found
+					lspconfig["pyright"].setup({
+						capabilities = capabilities,
+						settings = {
+							python = {
+								analysis = {
+									autoSearchPaths = true,
+									useLibraryCodeForTypes = true,
+									extraPaths = { "/opt/homebrew/lib/python3.11/site-packages" }, -- Corrected path for Python 3.11
+									typeCheckingMode = "basic",
+								},
+								pythonPath = homebrew_python,
+							},
+						},
+						on_attach = function(client, bufnr)
+							vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+							client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+						end,
+					})
+				end
 			end,
 		})
 	end,
