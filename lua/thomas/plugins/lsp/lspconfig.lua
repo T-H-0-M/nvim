@@ -228,6 +228,24 @@ return {
 					})
 				end
 			end,
+			["ltex"] = function()
+				lspconfig.ltex.setup({
+					capabilities = capabilities,
+					filetypes = { "markdown", "tex", "plaintext" }, -- Specify filetypes here
+					settings = {
+						ltex = {
+							enabled = { "latex", "tex", "bib", "markdown" },
+							language = "en",
+							diagnosticSeverity = "information",
+							setenceCacheSize = 2000,
+							additionalRules = {
+								enablePickyRules = true,
+								motherTongue = "en",
+							},
+						},
+					},
+				})
+			end,
 		})
 	end,
 }
