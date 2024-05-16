@@ -28,16 +28,16 @@ return {
 		-- Configure the hover handler
 		vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 			border = "rounded",
-			width = 60,
+			max_width = 80,
+			max_height = 20,
 			focusable = false,
 			style = "minimal",
 			float = {
 				border = "rounded",
 				highlight = "LspHoverWindow",
-				winblend = 0, -- Adjust the transparency (0 means fully opaque)
+				winblend = 0,
 			},
 		})
-
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
