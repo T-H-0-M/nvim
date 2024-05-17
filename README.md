@@ -124,5 +124,5 @@ All packages should automatically install.
 
 ## References
 
-[Josean's Neovim Configuration](https://www.josean.com/posts/how-to-setup-neovim-2024)
-[ChatGPT](https://www.openai.com/)
+- [Josean's Neovim Configuration](https://www.josean.com/posts/how-to-setup-neovim-2024)
+- [ChatGPT](https://www.openai.com/)
