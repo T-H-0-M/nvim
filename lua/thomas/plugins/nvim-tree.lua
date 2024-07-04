@@ -8,8 +8,31 @@ return {
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
+		local function get_center_coords()
+			local win_width = vim.api.nvim_win_get_width(0)
+			local win_height = vim.api.nvim_win_get_height(0)
+			local width = math.floor(win_width * 0.8)
+			local height = math.floor(win_height * 0.8)
+			local row = math.floor((win_height - height) / 2)
+			local col = math.floor((win_width - width) / 2)
+			return width, height, row, col
+		end
 		nvimtree.setup({
 			view = {
+				float = {
+					enable = true,
+					open_win_config = function()
+						local width, height, row, col = get_center_coords()
+						return {
+							relative = "editor",
+							border = "rounded",
+							width = width,
+							height = height,
+							row = row,
+							col = col,
+						}
+					end,
+				},
 				width = 50,
 				relativenumber = true,
 			},
