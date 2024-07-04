@@ -9,14 +9,15 @@ return {
 		vim.g.loaded_netrwPlugin = 1
 
 		local function get_center_coords()
-			local win_width = vim.api.nvim_win_get_width(0)
-			local win_height = vim.api.nvim_win_get_height(0)
-			local width = math.floor(win_width * 0.8)
-			local height = math.floor(win_height * 0.8)
-			local row = math.floor((win_height - height) / 2)
-			local col = math.floor((win_width - width) / 2)
+			local screen_width = vim.opt.columns:get()
+			local screen_height = vim.opt.lines:get() - vim.opt.cmdheight:get()
+			local width = math.floor(screen_width * 0.8)
+			local height = math.floor(screen_height * 0.8)
+			local row = math.floor((screen_height - height) / 2)
+			local col = math.floor((screen_width - width) / 2)
 			return width, height, row, col
 		end
+
 		nvimtree.setup({
 			view = {
 				float = {
@@ -30,13 +31,13 @@ return {
 							height = height,
 							row = row,
 							col = col,
+							zindex = 100,
 						}
 					end,
 				},
 				width = 50,
 				relativenumber = true,
-			},
-			-- change folder arrow icons
+			}, -- change folder arrow icons
 			renderer = {
 				indent_markers = {
 					enable = true,
