@@ -48,3 +48,4 @@ keymap.set("n", "<leader>tv", ":VimtexView<CR>", { noremap = true, silent = true
 keymap.set("n", "<leader>tw", ":VimtexCountWords<CR>", { noremap = true, silent = true })
 
 -- NeoTest
+keymap.set("n", "<leader>tp", ":TSPlaygroundToggle<CR>", { noremap = true, silent = true })
