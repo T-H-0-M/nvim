@@ -70,11 +70,12 @@
 -- 			end,
 -- 		})
 --
--- 		vim.cmd("colorscheme rose-pine-main")
+-- 		-- vim.cmd("colorscheme rose-pine-main")
 -- 		-- vim.cmd("colorscheme rose-pine-moon")
--- 		-- vim.cmd("colorscheme rose-pine-dawn")
+-- 		vim.cmd("colorscheme rose-pine-dawn")
 -- 	end,
 -- }
+
 -- return {
 -- 	"savq/melange-nvim",
 -- 	priority = 1000,
@@ -82,42 +83,56 @@
 -- 		vim.cmd.colorscheme("melange")
 -- 	end,
 -- }
+
+-- return {
+-- 	"ellisonleao/gruvbox.nvim",
+-- 	priority = 1000,
+-- 	config = function()
+-- 		-- Default options:
+-- 		require("gruvbox").setup({
+-- 			terminal_colors = true, -- add neovim terminal colors
+-- 			undercurl = true,
+-- 			underline = true,
+-- 			bold = true,
+-- 			italic = {
+-- 				strings = true,
+-- 				emphasis = true,
+-- 				comments = true,
+-- 				operators = false,
+-- 				folds = true,
+-- 			},
+-- 			strikethrough = true,
+-- 			invert_selection = false,
+-- 			invert_signs = false,
+-- 			invert_tabline = false,
+-- 			invert_intend_guides = false,
+-- 			inverse = true, -- invert background for search, diffs, statuslines and errors
+-- 			contrast = "", -- can be "hard", "soft" or empty string
+-- 			palette_overrides = {},
+-- 			overrides = {
+-- 				markdownH1 = { fg = "#d3869b", bg = "NONE", bold = true }, -- Pink
+-- 				markdownH2 = { fg = "#fabd2f", bg = "NONE", bold = true }, -- Yellow
+-- 				markdownH3 = { fg = "#b8bb26", bg = "NONE", bold = true }, -- Green
+-- 				markdownH4 = { fg = "#83a598", bg = "NONE", bold = true }, -- Cyan
+-- 				markdownH5 = { fg = "#fb4934", bg = "NONE", bold = true }, -- Red
+-- 				markdownH6 = { fg = "#8ec07c", bg = "NONE", bold = true }, -- Light green
+-- 			},
+-- 			dim_inactive = false,
+-- 			transparent_mode = false,
+-- 		})
+-- 		vim.cmd("colorscheme gruvbox")
+-- 	end,
+-- }
+
 return {
-	"ellisonleao/gruvbox.nvim",
+	"sainnhe/everforest",
+	lazy = false,
 	priority = 1000,
 	config = function()
-		-- Default options:
-		require("gruvbox").setup({
-			terminal_colors = true, -- add neovim terminal colors
-			undercurl = true,
-			underline = true,
-			bold = true,
-			italic = {
-				strings = true,
-				emphasis = true,
-				comments = true,
-				operators = false,
-				folds = true,
-			},
-			strikethrough = true,
-			invert_selection = false,
-			invert_signs = false,
-			invert_tabline = false,
-			invert_intend_guides = false,
-			inverse = true, -- invert background for search, diffs, statuslines and errors
-			contrast = "", -- can be "hard", "soft" or empty string
-			palette_overrides = {},
-			overrides = {
-				markdownH1 = { fg = "#d3869b", bg = "NONE", bold = true }, -- Pink
-				markdownH2 = { fg = "#fabd2f", bg = "NONE", bold = true }, -- Yellow
-				markdownH3 = { fg = "#b8bb26", bg = "NONE", bold = true }, -- Green
-				markdownH4 = { fg = "#83a598", bg = "NONE", bold = true }, -- Cyan
-				markdownH5 = { fg = "#fb4934", bg = "NONE", bold = true }, -- Red
-				markdownH6 = { fg = "#8ec07c", bg = "NONE", bold = true }, -- Light green
-			},
-			dim_inactive = false,
-			transparent_mode = false,
-		})
-		vim.cmd("colorscheme gruvbox")
+		-- Optionally configure and load the colorscheme
+		-- directly inside the plugin declaration.
+		vim.g.everforest_background = "hard"
+		vim.g.everforest_enable_italic = true
+		vim.cmd.colorscheme("everforest")
 	end,
 }
