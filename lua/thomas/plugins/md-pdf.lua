@@ -1,6 +1,6 @@
 return {
 	"arminveres/md-pdf.nvim",
-	branch = "fix/echo-loop",
+	branch = "main",
 	lazy = true,
 	keys = {
 		{
