@@ -14,7 +14,21 @@ return {
 				html = { "prettier" },
 				json = { "prettier" },
 				yaml = { "prettier" },
+				-- markdown = { { command = "prettier", args = { "--tab-width", "4" } } },
 				markdown = { "prettier" },
+				-- markdown = { { command = "deno_fmt", args = { "--indent-width", "4" } } }, -- Using deno fmt for Markdown with custom indent width
+				-- markdown = { "deno_fmt" },
+				-- markdown = {
+				-- 	{
+				-- 		command = "prettier",
+				-- 		args = {
+				-- 			"--print-width",
+				-- 			"80",
+				-- 			"--prose-wrap",
+				-- 			"always",
+				-- 		},
+				-- 	},
+				-- },
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },

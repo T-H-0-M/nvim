@@ -36,6 +36,7 @@ return {
 					"-synctex=1",
 					"-interaction=nonstopmode",
 				},
+				continuous = 0,
 			}
 		end,
 	},

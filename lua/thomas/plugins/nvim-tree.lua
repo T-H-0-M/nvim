@@ -31,7 +31,7 @@ return {
 							height = height,
 							row = row,
 							col = col,
-							zindex = 100,
+							-- zindex = 100,
 						}
 					end,
 				},

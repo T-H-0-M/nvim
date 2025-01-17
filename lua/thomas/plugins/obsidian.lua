@@ -43,7 +43,7 @@ return {
 				},
 				{
 					name = "work",
-					path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Work",
+					path = "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Ihydrate-Wiki/",
 				},
 			},
 

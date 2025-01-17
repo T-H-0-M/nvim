@@ -171,11 +171,13 @@ return {
 				})
 			end,
 			-- Configuration for TypeScript (tsserver)
-			["tsserver"] = function()
-				lspconfig["tsserver"].setup({
-					capabilities = capabilities,
+			["eslint"] = function()
+				lspconfig.eslint.setup({
 					on_attach = function(client, bufnr)
-						-- TypeScript server-specific settings or event handlers
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							buffer = bufnr,
+							command = "EslintFixAll",
+						})
 					end,
 				})
 			end,
@@ -196,6 +198,7 @@ return {
 					capabilities = capabilities,
 					on_attach = function(client, bufnr)
 						-- Java server-specific settings or event handlers
+						client.server_capabilities.semanticTokensProvider = nil
 					end,
 					cmd = {
 						java_home .. "/bin/java",
